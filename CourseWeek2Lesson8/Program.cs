@@ -6,7 +6,18 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise5();
+            Exercise6();
+        }
+
+        private static void Exercise6()
+        {
+            /* 6. Napisz program, który dla liczb od 0 do 20 obliczy sumę wg wzoru: 1 + ½ + 1/3 + ¼ itd.        */
+
+            for (double i = 1; i <= 20; i++)
+            {
+                double result = i + 0.5 * i + 0.33333 * i + 0.25 * i;
+                Console.WriteLine($"Result of putting {i} for x into this equasion \"1x + 1/2x + 1/3x + 1/4x\" is {Math.Round(result,2)}");
+            }
         }
 
         private static void Exercise5()
