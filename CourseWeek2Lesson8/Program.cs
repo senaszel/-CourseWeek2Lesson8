@@ -6,7 +6,25 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise7();
+            Exercise8();
+        }
+
+        private static void Exercise8()
+        {
+            /* 8. Napisz program, który odwróci wprowadzony przez użytkownika ciąg znaków. Np.
+                    Testowe dane:
+                        Abcdefg
+                        Rezultat
+                        Gfedcba     */
+
+            Console.Write("Input string to reverse: ");
+            string input = Console.ReadLine();
+            string output = string.Empty;
+            for (int inputCharacter = input.Length-1; inputCharacter > -1; inputCharacter--)
+            {
+                output = string.Concat(output, input[inputCharacter]);
+            }
+            Console.WriteLine(output);
         }
 
         private static void Exercise7()
