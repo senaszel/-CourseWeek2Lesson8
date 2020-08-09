@@ -6,7 +6,33 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise3();
+            Exercise4();
+        }
+
+        private static void Exercise4()
+        {
+            /* 4. Napisz program, który po podaniu liczby całkowitej wyświetli piramidę liczb od 1 do podanej liczby w formie jak poniżej:
+                    1
+                    2 3
+                    4 5 6
+                    7 8 9 10        */
+
+            int numberOfblocks = 10;
+            int rowLimit = 1;
+            int prevLimit = 0;
+            for (int blockNb = 1; blockNb <= numberOfblocks; blockNb++)
+            {
+                if (blockNb - prevLimit < rowLimit)
+                {
+                    Console.Write(string.Concat(blockNb, " "));
+                }
+                else
+                {
+                    Console.WriteLine(string.Concat(blockNb, " "));
+                    rowLimit += 1;
+                    prevLimit = blockNb;
+                }
+            }
         }
 
         private static void Exercise3()
