@@ -6,7 +6,17 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise4();
+            Exercise5();
+        }
+
+        private static void Exercise5()
+        {
+            /* 5. Napisz program, który dla liczb od 1 do 20 wyświetli na ekranie ich 3 potęgę      */
+
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine(string.Concat($"3rd power of {i} is ",Math.Pow(i, 3),"."));
+            }
         }
 
         private static void Exercise4()
