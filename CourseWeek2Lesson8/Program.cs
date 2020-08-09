@@ -6,7 +6,26 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise2();
+            Exercise3();
+        }
+
+        private static void Exercise3()
+        {
+            /* 3. Napisz program, który zaimplementuje ciąg Fibonacciego i wyświetli go na ekranie.     */
+
+            Console.Write("Those are first 92 Fibonacci numbers:  ");
+            long preprev = 0;
+            Console.Write(string.Concat(preprev, " "));
+            long prev = 1;
+            Console.Write(string.Concat(prev, " "));
+
+            for (int i = 2; i <= 92; i++)
+            {
+                long current = preprev + prev;
+                preprev = prev;
+                prev = current;
+                Console.Write(string.Concat(current, " "));
+            }
         }
 
         private static void Exercise2()
