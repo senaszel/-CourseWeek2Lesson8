@@ -6,7 +6,20 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise1();
+            Exercise2();
+        }
+
+        private static void Exercise2()
+        {
+            /* 2. Napisz program, w którym za pomocą pętli do…while znajdziesz wszystkie liczby parzyste z zakresu 0 – 1000     */
+
+            int number = 1;
+            do
+            {
+                if (number % 2 == 0) Console.Write(string.Concat(number, " "));
+                number += 1;
+
+            } while (number <= 1000);
         }
 
         private static void Exercise1()
