@@ -6,7 +6,51 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise6();
+            Exercise7();
+        }
+
+        private static void Exercise7()
+        {
+            /* 7. Napisz program, który dla liczby zadanej przez użytkownika narysuje diament o krótszej
+                  przekątnej o długości wprowadzonej przez użytkownika i wg wzoru:
+                            *
+                           ***
+                          *****
+                         *******
+                        *********
+                         *******
+                          *****
+                           ***
+                            *               */
+
+            int diagonal = 9;
+
+            int prehalf = diagonal / 2;
+            int upperParts = 1;
+
+            int posthalf = 1;
+            int lowerParts = diagonal-2;
+
+            for (int i = 0; i < diagonal; i++)
+            {
+                if (i < diagonal / 2)
+                {
+                    Console.WriteLine(string.Concat(new string(' ', prehalf), new string('*', upperParts), new string(' ', prehalf)));
+                    prehalf -= 1;
+                    upperParts += 2;
+                }
+                else if (i == diagonal / 2)
+                {
+                    Console.WriteLine(new string('*', diagonal));
+                }
+                else if (i > diagonal / 2)
+                {
+
+                    Console.WriteLine(string.Concat(new string(' ', posthalf), new string('*', lowerParts), new string(' ', posthalf)));
+                    posthalf += 1;
+                    lowerParts -= 2;
+                }
+            }
         }
 
         private static void Exercise6()
@@ -16,7 +60,7 @@ namespace CourseWeek2Lesson8
             for (double i = 1; i <= 20; i++)
             {
                 double result = i + 0.5 * i + 0.33333 * i + 0.25 * i;
-                Console.WriteLine($"Result of putting {i} for x into this equasion \"1x + 1/2x + 1/3x + 1/4x\" is {Math.Round(result,2)}");
+                Console.WriteLine($"Result of putting {i} for x into this equasion \"1x + 1/2x + 1/3x + 1/4x\" is {Math.Round(result, 2)}");
             }
         }
 
@@ -26,7 +70,7 @@ namespace CourseWeek2Lesson8
 
             for (int i = 1; i <= 20; i++)
             {
-                Console.WriteLine(string.Concat($"3rd power of {i} is ",Math.Pow(i, 3),"."));
+                Console.WriteLine(string.Concat($"3rd power of {i} is ", Math.Pow(i, 3), "."));
             }
         }
 
