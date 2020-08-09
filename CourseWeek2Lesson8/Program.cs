@@ -6,7 +6,26 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise8();
+            Exercise9();
+        }
+
+        private static void Exercise9()
+        {
+            /* 9. Napisz program, który zamieni liczbę dziesiętną na liczbę binarną.    */
+
+            int dec = 312;
+
+            int temp = 0;
+            string bin = string.Empty;
+
+            int _dec = dec;
+            while (_dec > 0)
+            {
+                temp = _dec % 2;
+                _dec = _dec/2;
+                bin = string.Concat(temp,bin);
+            }
+            Console.WriteLine($"Decimal {_dec} => binary equals {bin}.");
         }
 
         private static void Exercise8()
@@ -20,7 +39,7 @@ namespace CourseWeek2Lesson8
             Console.Write("Input string to reverse: ");
             string input = Console.ReadLine();
             string output = string.Empty;
-            for (int inputCharacter = input.Length-1; inputCharacter > -1; inputCharacter--)
+            for (int inputCharacter = input.Length - 1; inputCharacter > -1; inputCharacter--)
             {
                 output = string.Concat(output, input[inputCharacter]);
             }
@@ -47,7 +66,7 @@ namespace CourseWeek2Lesson8
             int upperParts = 1;
 
             int posthalf = 1;
-            int lowerParts = diagonal-2;
+            int lowerParts = diagonal - 2;
 
             for (int i = 0; i < diagonal; i++)
             {
