@@ -6,7 +6,57 @@ namespace CourseWeek2Lesson8
     {
         static void Main(string[] args)
         {
-            Exercise9();
+            Exercise10(77, 18);
+        }
+
+        private static void Exercise10(int firstNumber, int secondNumber)
+        {
+            /* 10. Napisz program, który znajdzie najmniejszą wspólną wielokrotność dla zadanych 2 liczb.   */
+
+            var firstGroup = PrimeFactorize(firstNumber).Split(',',StringSplitOptions.RemoveEmptyEntries);
+            var secondGroup = PrimeFactorize(secondNumber).Split(',',StringSplitOptions.RemoveEmptyEntries);
+
+            int lcm = 1;
+            for (int i = 0; i < firstGroup.Length; i++)
+            {
+                lcm *= int.Parse(firstGroup[i].ToString());
+            }
+
+            for (int i = 0; i < secondGroup.Length; i++)
+            {
+                bool unique = true;
+                for (int j = 0; j < firstGroup.Length; j++)
+                {
+                    if (secondGroup[i] == firstGroup[j])
+                    {
+                        unique = false;
+                        break;
+                    }
+                }
+                if (unique) lcm *= int.Parse(secondGroup[i].ToString());
+            }
+
+            Console.WriteLine($"LCM({firstNumber},{secondNumber}) is {lcm}");
+        }
+
+        private static string PrimeFactorize(int _number)
+        {
+            int number = _number;
+            string primeFactors = string.Empty;
+
+            int divisor = 2;
+            while (number > 1)
+            {
+                while (number % divisor != 0) { divisor += 1; }
+                int temp = number / divisor;
+
+                number = temp;
+                primeFactors = string.Concat(primeFactors, divisor,',');
+                divisor = 2;
+            }
+
+            Console.WriteLine($"Prime Factors of {_number} are: {primeFactors.Remove(primeFactors.Length-1)}");
+            return primeFactors;
         }
 
         private static void Exercise9()
@@ -22,8 +72,8 @@ namespace CourseWeek2Lesson8
             while (_dec > 0)
             {
                 temp = _dec % 2;
-                _dec = _dec/2;
-                bin = string.Concat(temp,bin);
+                _dec = _dec / 2;
+                bin = string.Concat(temp, bin);
             }
             Console.WriteLine($"Decimal {_dec} => binary equals {bin}.");
         }
